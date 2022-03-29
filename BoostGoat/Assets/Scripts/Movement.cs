@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+  [SerializeField] float mainThrust = 300;
+  [SerializeField] float rotateThrust = 100;
+  [SerializeField] AudioClip mainEngineSound;
   Rigidbody rb;
-
+  AudioSource asrc;
+  [SerializeField] ParticleSystem mainThrustParticles;
+  [SerializeField] ParticleSystem leftThrustParticles;
+  [SerializeField] ParticleSystem rightThrustParticles;
 
   // Start is called before the first frame update
   void Start()
   {
     rb = GetComponent<Rigidbody>();
+    asrc = GetComponent<AudioSource>();
   }
 
   // Update is called once per frame
@@ -24,17 +31,46 @@ public class Movement : MonoBehaviour
     if (Input.GetKey(KeyCode.Space))
     {
       //Debug.Log("pressed thrusting");
-      rb.AddRelativeForce(0, 1, 0);
+      rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+      if (!asrc.isPlaying)
+      {
+        asrc.PlayOneShot(mainEngineSound);
+        mainThrustParticles.Play();
+      }
+    }
+    else
+    {
+      asrc.Stop();
+      mainThrustParticles.Stop();
     }
     // left rotate is given priority
     if (Input.GetKey(KeyCode.A))
     {
-      Debug.Log("pressed left Rotate");
+      //forward is (0,0,1)
+      // right thrust is used when rotate left
+      Debug.Log("right thrust");
+      if (!rightThrustParticles.isPlaying) rightThrustParticles.Play();
+      ApplyRotation(1);
     }
     else if (Input.GetKey(KeyCode.D))
     {
-      Debug.Log("pressed right Rotate");
-    }
 
+      if (!leftThrustParticles.isPlaying) leftThrustParticles.Play();
+      ApplyRotation(-1);
+    }
+    else
+    {
+      Debug.Log("stopped");
+      rightThrustParticles.Stop();
+      leftThrustParticles.Stop();
+    }
+  }
+
+  void ApplyRotation(float direction)
+  {
+    rb.freezeRotation = true;
+    //rb.AddTorque(Vector3.left * direction * rotateThrust * Time.deltaTime);
+    transform.Rotate(Vector3.forward * direction * rotateThrust * Time.deltaTime);
+    rb.freezeRotation = false;
   }
 }
