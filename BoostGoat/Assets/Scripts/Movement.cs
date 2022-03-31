@@ -28,9 +28,9 @@ public class Movement : MonoBehaviour
 
   void ProcessInput()
   {
-    if (Input.GetKey(KeyCode.Space))
+    // **************** Process thrust ******************
+    if (Input.GetKey(KeyCode.W))
     {
-      //Debug.Log("pressed thrusting");
       rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
       if (!asrc.isPlaying)
       {
@@ -43,12 +43,12 @@ public class Movement : MonoBehaviour
       asrc.Stop();
       mainThrustParticles.Stop();
     }
+    // *********** Process rotation ********************
     // left rotate is given priority
     if (Input.GetKey(KeyCode.A))
     {
       //forward is (0,0,1)
       // right thrust is used when rotate left
-      Debug.Log("right thrust");
       if (!rightThrustParticles.isPlaying) rightThrustParticles.Play();
       ApplyRotation(1);
     }
@@ -60,7 +60,7 @@ public class Movement : MonoBehaviour
     }
     else
     {
-      Debug.Log("stopped");
+      //Debug.Log("stopped");
       rightThrustParticles.Stop();
       leftThrustParticles.Stop();
     }

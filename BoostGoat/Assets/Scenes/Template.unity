@@ -1026,53 +1026,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: RocksSet
       objectReference: {fileID: 0}
-    - target: {fileID: 3171851153126408728, guid: 973c60132a2bc57408b44a2b06b82012, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3171851153164592600, guid: 973c60132a2bc57408b44a2b06b82012, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3171851153268742437, guid: 973c60132a2bc57408b44a2b06b82012, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3171851153269846221, guid: 973c60132a2bc57408b44a2b06b82012, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3171851153384320375, guid: 973c60132a2bc57408b44a2b06b82012, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3171851153546344976, guid: 973c60132a2bc57408b44a2b06b82012, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3171851153986329666, guid: 973c60132a2bc57408b44a2b06b82012, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3171851154052667421, guid: 973c60132a2bc57408b44a2b06b82012, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3171851154096896501, guid: 973c60132a2bc57408b44a2b06b82012, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3171851154172041979, guid: 973c60132a2bc57408b44a2b06b82012, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3171851154362278298, guid: 973c60132a2bc57408b44a2b06b82012, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3171851154769107317, guid: 973c60132a2bc57408b44a2b06b82012, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 973c60132a2bc57408b44a2b06b82012, type: 3}
